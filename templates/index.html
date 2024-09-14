@@ -21,16 +21,16 @@
         </div>
         <button class="gradient-button" onClick="addTown()">Add</button></center>
     </form>
-     <center><h1><font color="black" face="fw-normal"> Список посещенных мною городов</font> </h1></center>
+     <center><h1><font color="white" face="fw-normal"> Список задач</font> </h1></center>
     {% if towns_list %}
         {% for town in towns_list %}
             <div class="alert alert-light mt-2" style="font-style:italic">
-                <h3>Город: {{ town['town'] }}</h3>
+                <h3>Задача: {{ town['town'] }}</h3>
                 <p>Дата: {{ town['visit_date'] }}</p>
             </div>
         {% endfor %}
     {% else %}
-<p><font  color="white" face="fw-normal">Люблю сидеть дома)</font></p>
+<p><font  color="white" face="fw-normal">Мне пох пох)</font></p>
     {% endif %}
 </body>
 </html>
