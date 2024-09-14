@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Задачник</title>
+    <script type="text/javascript" src="/static/create.js"></script>
+    <link href="static/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="media/styles/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+<header>
+    <center><h1><p class="text-white">Задачи, которые надо решить</p></h1></center>
+</header>
+    <form>
+        <div class="alert mt-2" style="font-style:italic">
+            <label for="town" class="form-label"><p class="text-white">Задание</p></label>
+            <input type="text" name="town" id="town" class="form-control">
+            <label for="visit_date" class="form-label"><p class="text-white">Дата дедлайна</p></label>
+            <input type="date" name="visit_date" id="visit_date" class="form-control">
+        </div>
+        <button class="gradient-button" onClick="addTown()">Add</button></center>
+    </form>
+     <center><h1><font color="black" face="fw-normal"> Список посещенных мною городов</font> </h1></center>
+    {% if towns_list %}
+        {% for town in towns_list %}
+            <div class="alert alert-light mt-2" style="font-style:italic">
+                <h3>Город: {{ town['town'] }}</h3>
+                <p>Дата: {{ town['visit_date'] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+<p><font  color="white" face="fw-normal">Люблю сидеть дома)</font></p>
+    {% endif %}
+</body>
+</html>
+
